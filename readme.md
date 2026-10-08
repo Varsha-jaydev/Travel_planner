@@ -1,6 +1,6 @@
 # ✈️ AI Travel Planner
 
-A multi-agent travel planner built with **CrewAI** and **Ollama (Qwen3)** that generates personalized travel itineraries based on destination, trip length, budget, and interests.
+A multi-agent travel planner built with **CrewAI** and **Ollama (Qwen3)** that creates personalized itineraries based on destination, trip length, budget, and interests.
 
 ## Features
 
@@ -10,16 +10,65 @@ A multi-agent travel planner built with **CrewAI** and **Ollama (Qwen3)** that g
 * ❤️ Personalized interests
 * 🤖 Local LLM with Ollama
 
+## Example
+
+**Input**
+
+```text
+Destination: Tokyo, Japan
+Days: 5
+Budget: $2,000
+Interests: food, culture, history
+```
+
+**Generated itinerary**
+
+```text
+Day 1 — Traditional Tokyo
+
+Morning:
+Visit Senso-ji Temple and explore Asakusa.
+
+Lunch:
+Try traditional tempura near Asakusa.
+
+Afternoon:
+Walk through Ueno Park and visit the Tokyo National Museum.
+
+Evening:
+Explore Akihabara and enjoy a local dinner.
+
+Estimated daily cost: ~$120
+```
+
+The agents work sequentially:
+
+```text
+Destination Researcher
+        ↓
+Itinerary Planner
+        ↓
+Budget Analyst
+        ↓
+Personalized Travel Plan
+```
+
+## Screenshots
+
+### 🗺️ Travel Planner
+
+![Travel Planner](screenshots/example1.png)
+![Generated Itinerary](screenshots/example2.png)
+
 ## Setup
 
 ```bash
 git clone <your-repo-url>
 cd travel-planner
-
 pip install -r requirements.txt
 ```
 
-Make sure Ollama is running and the model is available:
+Install the Ollama model:
 
 ```bash
 ollama pull qwen3:8b
@@ -38,7 +87,7 @@ python agent.py \
   --interests "food, culture, history"
 ```
 
-### Streamlit
+### Web UI
 
 ```bash
 streamlit run app.py
@@ -46,7 +95,4 @@ streamlit run app.py
 
 ## Tech Stack
 
-* Python
-* CrewAI
-* Ollama / Qwen3
-* Streamlit
+**Python · CrewAI · Ollama/Qwen3 · Streamlit**
