@@ -77,18 +77,6 @@ ollama serve
 
 ## Run
 
-### CLI
-
-```bash
-python agent.py \
-  --destination "Tokyo, Japan" \
-  --days 5 \
-  --budget 2000 \
-  --interests "food, culture, history"
-```
-
-### Web UI
-
 ```bash
 streamlit run app.py
 ```
